@@ -66,7 +66,6 @@ offline.plot(fig, filename='python_repos.html')
 # * LOGS
 # Print the total of repositories
 print(f"Total repositories: {res_dict['total_count']}")
-# print(res_dict.keys())
 # * Explore information about the repositories
 # Total number of repos (which checks the size of the items array)
 print(f"Repositories returned: {len(repo_dicts)}")
