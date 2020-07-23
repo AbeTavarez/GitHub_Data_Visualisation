@@ -18,16 +18,23 @@ print(f"Status code: {req.status_code}")
 res_dict = req.json()
 # Grabs the items list which contains all repos (list of dictionaries)
 repo_dicts = res_dict["items"]
+# Store data for initial chart/ for repo name and starts for height of bars
 repo_names, starts = [], []
 for repo in repo_dicts:
     repo_names.append(repo['name'])
     starts.append(repo['stargazers_count'])
 
 # * Make Visualization
+# provides data for x and y values /x repo names / y starts
 data = [{
     "type": "bar",
     "x": repo_names,
     "y": starts,
+    "marker": {
+        "color": "rgb(60,100,150)",
+        "line": {"width": 1.5, "color": "rgb(25,25,25)"}
+    },
+    "opacity": 0.6,
 }]
 
 layout = {
